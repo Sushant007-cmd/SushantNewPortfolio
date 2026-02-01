@@ -17,19 +17,19 @@ const milestones = [
     {
         title: "IGDC Indie 40 Selection",
         subtitle: "Selected among India's top 40 independent studios to showcase our game at the IGDC 2025 event.",
-        image: "/extras/igdc.png",
+        image: `${import.meta.env.BASE_URL}extras/igdc.png`,
         color: "#ef4444" // Warrior Red
     },
     {
         title: "50K+ Players Reached",
         subtitle: "Co-founded Trojan Productions with college friends, building a loyal community and reaching over 50k players across our indie horror releases on itch.io.",
-        image: "/extras/trojan.png",
+        image: `${import.meta.env.BASE_URL}extras/trojan.png`,
         color: "#3b82f6" // Blue
     },
     {
         title: "GOT SELECTED FOR XBOX DAP",
         subtitle: "Our game 'Sermon' from Trojan Productions was selected for the Xbox Developer Accelerator Program, bringing our indie vision to console platforms.",
-        image: "/extras/xbox_dap.png",
+        image: `${import.meta.env.BASE_URL}extras/xbox_dap.png`,
         color: "#22c55e" // Green
     },
     {

@@ -76,7 +76,7 @@ const Trojan = () => {
                             />
 
                             <img
-                                src="/extras/trojan.png"
+                                src={`${import.meta.env.BASE_URL}extras/trojan.png`}
                                 alt="Trojan Productions"
                                 className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700 drop-shadow-[0_0_50px_rgba(239,68,68,0.2)]"
                             />

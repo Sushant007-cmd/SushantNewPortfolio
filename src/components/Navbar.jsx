@@ -1,14 +1,13 @@
 import { motion } from 'framer-motion';
-import { NavHashLink as NavLink } from 'react-router-hash-link';
 import { Link } from 'react-router-dom';
 
 const Navbar = ({ textColor }) => {
     const links = [
-        { name: 'Skills', href: '/#arsenal', type: 'hash' },
-        { name: 'Projects', href: '/#projects', type: 'hash' },
-        { name: 'About me', href: '/#about', type: 'hash' },
+        { name: 'Skills', href: '#arsenal', type: 'scroll' },
+        { name: 'Projects', href: '#projects', type: 'scroll' },
+        { name: 'About me', href: '#about', type: 'scroll' },
         { name: 'Trojan', href: '/trojan', type: 'link' },
-        { name: 'Contact', href: '/#contact', type: 'hash' },
+        { name: 'Contact', href: '#contact', type: 'scroll' },
         { name: 'Resume', href: 'https://drive.google.com/file/d/1pxnGTQ9uvHdsABhMhoM-_HH-M0T_u_-f/view?usp=sharing', type: 'external' },
     ];
 
@@ -24,13 +23,24 @@ const Navbar = ({ textColor }) => {
                 className="flex items-center justify-center flex-wrap gap-4 md:gap-8 pointer-events-auto"
             >
                 {links.map((link) => {
-                    const baseClass = "text-[9px] md:text-sm font-bold uppercase tracking-[0.15em] hover:text-warrior-red transition-all whitespace-nowrap";
+                    const baseClass = "text-[9px] md:text-sm font-bold uppercase tracking-[0.15em] hover:text-warrior-red transition-all whitespace-nowrap cursor-pointer";
 
-                    if (link.type === 'hash') {
+                    if (link.type === 'scroll') {
                         return (
-                            <NavLink key={link.name} to={link.href} smooth className={baseClass}>
+                            <a
+                                key={link.name}
+                                href={link.href}
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    const element = document.querySelector(link.href);
+                                    if (element) {
+                                        element.scrollIntoView({ behavior: 'smooth' });
+                                    }
+                                }}
+                                className={baseClass}
+                            >
                                 {link.name}
-                            </NavLink>
+                            </a>
                         );
                     } else if (link.type === 'link') {
                         return (

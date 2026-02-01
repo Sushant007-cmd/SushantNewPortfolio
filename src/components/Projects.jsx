@@ -9,7 +9,7 @@ const featuredProjects = [
         technologies: ["Unity", "C#"],
         role: "Lead Gameplay Developer",
         challenge: "Developing atmospheric mechanics and resource management systems under tight constraints.",
-        image: "/projects/trox.png",
+        image: `${import.meta.env.BASE_URL}projects/trox.png`,
         link: "https://troj4nblazing.itch.io/trox"
     },
     {
@@ -18,7 +18,7 @@ const featuredProjects = [
         technologies: ["Unity", "C#"],
         role: "Lead Developer",
         challenge: "Building a tense, atmospheric experience in just 30 days while staying true to the source material.",
-        image: "/projects/thepreparation.png",
+        image: `${import.meta.env.BASE_URL}projects/thepreparation.png`,
         link: "https://troj4nblazing.itch.io/thepreparation"
     },
     {
@@ -27,7 +27,7 @@ const featuredProjects = [
         technologies: ["Unity", "C#", "Unity Localization"],
         role: "Gameplay Programmer",
         challenge: "Developing modular systems and mechanics which can easily be used for further projects",
-        image: "/projects/dreadvault.png",
+        image: `${import.meta.env.BASE_URL}projects/dreadvault.png`,
         link: "https://troj4nblazing.itch.io/dreadvault"
     },
     {
@@ -36,7 +36,7 @@ const featuredProjects = [
         technologies: ["Unity", "C#", "Steam API"],
         role: "Professional QA Tester",
         challenge: "Ensuring mechanical stability and identifying critical edge-case bugs for a professional commercial launch.",
-        image: "/projects/crimsontactics.jpg",
+        image: `${import.meta.env.BASE_URL}projects/crimsontactics.jpg`,
         link: "https://store.steampowered.com/app/1480810/Crimson_Tactics_The_Rise_of_The_White_Banner/"
     },
     {
@@ -45,7 +45,7 @@ const featuredProjects = [
         technologies: ["Canva"],
         role: "Gamification Designer",
         challenge: "Developing engaging gamified loops and reward systems for high-frequency consumer environments.",
-        image: "/projects/fastbiterush.png",
+        image: `${import.meta.env.BASE_URL}projects/fastbiterush.png`,
         link: "https://www.canva.com/design/DAG47N0hm-Q/G4Bepnz5_b-faaZSyNKDZw/view?utm_content=DAG47N0hm-Q&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h933a984da0#5"
     },
     {
@@ -54,7 +54,7 @@ const featuredProjects = [
         technologies: ["Unity", "C#"],
         role: "Gameplay Programmer",
         challenge: "Developing an hour long game in 3 months and some features",
-        image: "/projects/traumatized.jpg",
+        image: `${import.meta.env.BASE_URL}projects/traumatized.jpg`,
         link: "https://sushantsocial.itch.io/traumatized"
     },
     {
@@ -63,7 +63,7 @@ const featuredProjects = [
         technologies: ["Unity", "C#"],
         role: "Designer and Developer",
         challenge: "Completing the game in 48 hours",
-        image: "/projects/fallingworld.png",
+        image: `${import.meta.env.BASE_URL}projects/fallingworld.png`,
         link: "https://paradisesan.itch.io/falling-world"
     },
     {
@@ -72,7 +72,7 @@ const featuredProjects = [
         technologies: ["Canva", "Photoshop"],
         role: "Game Economy Analyst",
         challenge: "Breaking down complex mobile monetization loops into clear, actionable pros and cons for academic evaluation.",
-        image: "/projects/heroesvshordes.png",
+        image: `${import.meta.env.BASE_URL}projects/heroesvshordes.png`,
         link: "https://www.canva.com/design/DAGitNCgbhU/9n9y8XPpDfYchFL9BqJirg/view?utm_content=DAGitNCgbhU&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=ha4410aa85b#1"
     },
     {
@@ -81,7 +81,7 @@ const featuredProjects = [
         technologies: ["Canva"],
         role: "Game Economy Analyst",
         challenge: "Analyzing and categorizing various monetization models and social features for game sustainability.",
-        image: "/projects/gamemonetization.png",
+        image: `${import.meta.env.BASE_URL}projects/gamemonetization.png`,
         link: "https://www.canva.com/design/DAGqxIJqoYM/zHXcqn5R0--Jv5fqEXBp-g/view?utm_content=DAGqxIJqoYM&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h48a43165d5#2"
     }
 ];

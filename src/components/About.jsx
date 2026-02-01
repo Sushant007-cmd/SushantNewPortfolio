@@ -3,9 +3,9 @@ import { useState, useEffect } from 'react';
 
 const About = () => {
     const images = [
-        "/me.jpg",
-        "/me_3.jpg",
-        "/me_4.png"
+        `${import.meta.env.BASE_URL}me.jpg`,
+        `${import.meta.env.BASE_URL}me_3.jpg`,
+        `${import.meta.env.BASE_URL}me_4.png`
     ];
 
     const [imgIndex, setImgIndex] = useState(0);
