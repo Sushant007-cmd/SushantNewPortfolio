@@ -15,6 +15,11 @@ const techStack = [
 
 const milestones = [
     {
+        title: "Google Play x Unity Program",
+        subtitle: "Selected for the Google Play x Unity Game Developer Training Program India 2025, specializing in advanced game development and industry standards.",
+        color: "#06b6d4" // Cyan
+    },
+    {
         title: "IGDC Indie 40 Selection",
         subtitle: "Selected among India's top 40 independent studios to showcase our game at the IGDC 2025 event.",
         image: `${import.meta.env.BASE_URL}extras/igdc.png`,
