@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { NavHashLink } from 'react-router-hash-link';
 
 const Navbar = ({ textColor }) => {
     const links = [
@@ -27,20 +28,14 @@ const Navbar = ({ textColor }) => {
 
                     if (link.type === 'scroll') {
                         return (
-                            <a
+                            <NavHashLink
                                 key={link.name}
-                                href={link.href}
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    const element = document.querySelector(link.href);
-                                    if (element) {
-                                        element.scrollIntoView({ behavior: 'smooth' });
-                                    }
-                                }}
+                                smooth
+                                to={`/${link.href}`}
                                 className={baseClass}
                             >
                                 {link.name}
-                            </a>
+                            </NavHashLink>
                         );
                     } else if (link.type === 'link') {
                         return (

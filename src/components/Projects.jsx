@@ -7,7 +7,7 @@ const featuredProjects = [
         title: "TROX",
         subtitle: "A post-apocalyptic survival horror game",
         technologies: ["Unity", "C#"],
-        role: "Lead Gameplay Developer",
+        role: "Game Programmer and Coordinator",
         challenge: "Developing atmospheric mechanics and resource management systems under tight constraints.",
         image: `${import.meta.env.BASE_URL}projects/trox.png`,
         link: "https://troj4nblazing.itch.io/trox"
@@ -16,7 +16,7 @@ const featuredProjects = [
         title: "THE PREPARATION",
         subtitle: "A short psychological horror based on a true story.",
         technologies: ["Unity", "C#"],
-        role: "Lead Developer",
+        role: "Game Programmer and Coordinator",
         challenge: "Building a tense, atmospheric experience in just 30 days while staying true to the source material.",
         image: `${import.meta.env.BASE_URL}projects/thepreparation.png`,
         link: "https://troj4nblazing.itch.io/thepreparation"
@@ -25,7 +25,7 @@ const featuredProjects = [
         title: "DREADVAULT",
         subtitle: "A modern psx style horror game",
         technologies: ["Unity", "C#", "Unity Localization"],
-        role: "Gameplay Programmer",
+        role: "Game Programmer and Coordinator",
         challenge: "Developing modular systems and mechanics which can easily be used for further projects",
         image: `${import.meta.env.BASE_URL}projects/dreadvault.png`,
         link: "https://troj4nblazing.itch.io/dreadvault"
@@ -33,7 +33,7 @@ const featuredProjects = [
     {
         title: "CRIMSON TACTICS",
         subtitle: "A turn-based tactical RPG",
-        technologies: ["Unity", "C#", "Steam API"],
+        technologies: ["Unity", "C#"],
         role: "Professional QA Tester",
         challenge: "Ensuring mechanical stability and identifying critical edge-case bugs for a professional commercial launch.",
         image: `${import.meta.env.BASE_URL}projects/crimsontactics.jpg`,
@@ -43,7 +43,6 @@ const featuredProjects = [
         title: "FASTBITE RUSH",
         subtitle: "Gamification concept for the fast food business",
         technologies: ["Canva"],
-        role: "Gamification Designer",
         challenge: "Developing engaging gamified loops and reward systems for high-frequency consumer environments.",
         image: `${import.meta.env.BASE_URL}projects/fastbiterush.png`,
         link: "https://www.canva.com/design/DAG47N0hm-Q/G4Bepnz5_b-faaZSyNKDZw/view?utm_content=DAG47N0hm-Q&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h933a984da0#5"
@@ -70,7 +69,6 @@ const featuredProjects = [
         title: "HEROES VS HORDES",
         subtitle: "Game Monetization Analysis Breakdown",
         technologies: ["Canva", "Photoshop"],
-        role: "Game Economy Analyst",
         challenge: "Breaking down complex mobile monetization loops into clear, actionable pros and cons for academic evaluation.",
         image: `${import.meta.env.BASE_URL}projects/heroesvshordes.png`,
         link: "https://www.canva.com/design/DAGitNCgbhU/9n9y8XPpDfYchFL9BqJirg/view?utm_content=DAGitNCgbhU&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=ha4410aa85b#1"
@@ -79,7 +77,6 @@ const featuredProjects = [
         title: "GAME MONETIZATION",
         subtitle: "Analysis of DLCs, Expansions, IAPs, and Social Features",
         technologies: ["Canva"],
-        role: "Game Economy Analyst",
         challenge: "Analyzing and categorizing various monetization models and social features for game sustainability.",
         image: `${import.meta.env.BASE_URL}projects/gamemonetization.png`,
         link: "https://www.canva.com/design/DAGqxIJqoYM/zHXcqn5R0--Jv5fqEXBp-g/view?utm_content=DAGqxIJqoYM&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h48a43165d5#2"
@@ -137,14 +134,16 @@ const TiltCard = ({ project }) => {
                 </div>
 
                 {/* Role */}
-                <div className="space-y-1">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-warrior-red">
-                        Role
-                    </span>
-                    <p className="text-slate-300 text-sm font-medium">
-                        {project.role}
-                    </p>
-                </div>
+                {project.role && (
+                    <div className="space-y-1">
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-warrior-red">
+                            Role
+                        </span>
+                        <p className="text-slate-300 text-sm font-medium">
+                            {project.role}
+                        </p>
+                    </div>
+                )}
 
                 {/* Key Challenge */}
                 <div className="space-y-1">
@@ -159,6 +158,7 @@ const TiltCard = ({ project }) => {
         </motion.a>
     );
 };
+
 
 const Projects = () => {
     return (

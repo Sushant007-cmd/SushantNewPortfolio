@@ -22,23 +22,47 @@ const Hero = () => {
                     </motion.p>
                 </div>
 
-                <div className="overflow-hidden mb-8">
+                <div className="overflow-hidden mb-4">
                     <motion.h1
                         initial={{ y: "120%" }}
                         animate={{ y: 0 }}
                         transition={{ duration: 1, delay: 0.1, ease: [0.33, 1, 0.68, 1] }}
-                        className="font-bold tracking-tight text-5xl sm:text-7xl md:text-9xl text-warm-text leading-tight p-2 shrink-0"
+                        className="font-bold tracking-tight text-6xl sm:text-8xl md:text-10xl text-warm-text leading-tight p-2 shrink-0 truncate"
                     >
                         Sushant
                     </motion.h1>
+                </div>
+
+                {/* Professional Title Section */}
+                <div className="flex flex-col items-center mb-8">
+                    <div className="overflow-hidden">
+                        <motion.span
+                            initial={{ y: "100%" }}
+                            animate={{ y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.3, ease: [0.33, 1, 0.68, 1] }}
+                            className="block text-sm md:text-lg font-black tracking-[0.4em] text-warrior-red uppercase"
+                        >
+                            Game Programmer
+                        </motion.span>
+                    </div>
+                    <div className="overflow-hidden -mt-1">
+                        <motion.span
+                            initial={{ y: "-100%" }}
+                            animate={{ y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.4, ease: [0.33, 1, 0.68, 1] }}
+                            className="block text-[10px] md:text-xs font-bold tracking-[0.2em] text-warm-text/50 uppercase"
+                        >
+                            & Coordinator
+                        </motion.span>
+                    </div>
                 </div>
 
                 <div className="overflow-hidden">
                     <motion.p
                         initial={{ y: "100%", opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
-                        transition={{ duration: 1, delay: 0.3, ease: [0.33, 1, 0.68, 1] }}
-                        className="text-xl md:text-2xl text-warm-text/70 font-sans font-light max-w-3xl mx-auto leading-relaxed"
+                        transition={{ duration: 1, delay: 0.5, ease: [0.33, 1, 0.68, 1] }}
+                        className="text-lg md:text-xl text-warm-text/70 font-sans font-light max-w-2xl mx-auto leading-relaxed"
                     >
                         I aim to build <span className="font-medium text-warm-text">memorable experiences</span> that leave a lasting impact, much like the <span className="font-medium text-warm-text">games that inspired me</span>.
                     </motion.p>

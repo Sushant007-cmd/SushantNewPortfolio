@@ -17,6 +17,10 @@ export default {
       fontFamily: {
         'sans': ['Inter', 'sans-serif'],
       },
+      fontSize: {
+        '10xl': '10rem',
+        '11xl': '12rem',
+      },
     },
   },
   plugins: [

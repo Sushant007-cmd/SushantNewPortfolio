@@ -352,404 +352,106 @@ const Trojan = () => {
                         </p>
                     </div>
 
-                    {/* Single Scrappy Collage Panel - Optimized */}
-                    <div className="relative w-full min-h-[700px] md:min-h-[800px] rounded-3xl border-2 border-white/10 bg-gradient-to-br from-black/60 to-neutral-900/80 p-8 md:p-12">
+                    {/* Optimized Video Collage / Grid */}
+                    <div className="relative w-full rounded-3xl border-2 border-white/10 bg-gradient-to-br from-black/60 to-neutral-900/80 p-4 md:p-12 overflow-hidden">
                         {/* Corner accents */}
-                        <div className="absolute top-4 left-4 w-16 h-16 border-t-2 border-l-2 border-warrior-red/40" />
-                        <div className="absolute bottom-4 right-4 w-16 h-16 border-b-2 border-r-2 border-warrior-red/40" />
+                        <div className="absolute top-4 left-4 w-12 md:w-16 h-12 md:h-16 border-t-2 border-l-2 border-warrior-red/40" />
+                        <div className="absolute bottom-4 right-4 w-12 md:w-16 h-12 md:h-16 border-b-2 border-r-2 border-warrior-red/40" />
 
-                        {/* Organized video collage - 18 videos in balanced layout */}
-                        <div className="relative w-full h-[800px] md:h-[900px]">
-                            {/* Row 1 - Top section (6 videos) */}
-                            {/* Video 1 - Top Left */}
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                whileInView={{ opacity: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.3 }}
-                                className="absolute top-[1%] left-[1%] w-[19%] aspect-video rounded-xl overflow-hidden border-4 border-white/20 shadow-xl cursor-pointer hover:scale-105 hover:z-50 transition-all duration-300 will-change-transform"
-                                style={{ transform: 'rotate(-1deg)' }}
-                            >
-                                <iframe
-                                    src="https://www.youtube.com/embed/622WDORv834"
-                                    title="Player Reaction Video"
-                                    className="w-full h-full"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen
-                                />
-                                <div className="absolute top-2 left-2 px-2 py-1 bg-warrior-red/90 text-white text-[10px] font-mono uppercase tracking-wider pointer-events-none">
-                                    REC •
-                                </div>
-                            </motion.div>
+                        {/* Mobile Grid Layout (visible on smaller screens) */}
+                        <div className="block md:hidden py-12 space-y-6">
+                            <div className="grid grid-cols-1 gap-6">
+                                {[
+                                    "622WDORv834", "piAXJlFfLn4", "nbDT71Y1cwc", "cs67mtPnNVM",
+                                    "4RNf6Q_iApA", "FrcyjEvl7Ng", "1EjOVraZT9M", "jSvm4kwpobs"
+                                ].map((id, idx) => (
+                                    <motion.div
+                                        key={`mob-${id}`}
+                                        initial={{ opacity: 0, scale: 0.95 }}
+                                        whileInView={{ opacity: 1, scale: 1 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: idx * 0.1 }}
+                                        className="relative aspect-video rounded-xl overflow-hidden border-2 border-white/20 shadow-lg"
+                                    >
+                                        <iframe
+                                            src={`https://www.youtube.com/embed/${id}`}
+                                            title="Player Reaction Video"
+                                            className="w-full h-full"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                            allowFullScreen
+                                        />
+                                    </motion.div>
+                                ))}
+                            </div>
+                            <p className="text-center font-mono text-[10px] text-gray-500 uppercase tracking-widest mt-8">
+                                -- Scroll for more reactions --
+                            </p>
+                        </div>
 
-                            {/* Video 2 */}
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                whileInView={{ opacity: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.3, delay: 0.1 }}
-                                className="absolute top-[2%] left-[21%] w-[19%] aspect-video rounded-xl overflow-hidden border-4 border-white/20 shadow-xl cursor-pointer hover:scale-105 hover:z-50 transition-all duration-300 will-change-transform"
-                                style={{ transform: 'rotate(1deg)' }}
-                            >
-                                <iframe
-                                    src="https://www.youtube.com/embed/piAXJlFfLn4"
-                                    title="Player Reaction Video"
-                                    className="w-full h-full"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen
-                                />
-                            </motion.div>
+                        {/* Desktop Collage Layout (visible on md+) */}
+                        <div className="hidden md:block relative w-full h-[900px]">
+                            {/* Static Data for Collage */}
+                            {[
+                                { id: "622WDORv834", top: "1%", left: "1%", w: "19%", rot: "-1deg", delay: 0 },
+                                { id: "piAXJlFfLn4", top: "2%", left: "21%", w: "19%", rot: "1deg", delay: 0.1 },
+                                { id: "nbDT71Y1cwc", top: "1%", left: "41%", w: "19%", rot: "-2deg", delay: 0.2, accent: true },
+                                { id: "cs67mtPnNVM", top: "2%", left: "61%", w: "19%", rot: "2deg", delay: 0.3 },
+                                { id: "4RNf6Q_iApA", top: "1%", right: "1%", w: "18%", rot: "-1deg", delay: 0.4 },
+                                { id: "FrcyjEvl7Ng", top: "23%", left: "1%", w: "19%", rot: "1deg", delay: 0.5 },
+                                { id: "1EjOVraZT9M", top: "24%", left: "21%", w: "19%", rot: "-2deg", delay: 0.6 },
+                                { id: "jSvm4kwpobs", top: "23%", left: "41%", w: "19%", rot: "2deg", delay: 0.7 },
+                                { id: "XfslJZyXppc", top: "24%", left: "61%", w: "19%", rot: "-1deg", delay: 0.8, accent: true, label: "SUBJECT #0421" },
+                                { id: "Xw1vfLX45O8", top: "23%", right: "1%", w: "18%", rot: "1deg", delay: 0.9 },
+                                { id: "b_l52wUEk_A", top: "46%", left: "1%", w: "19%", rot: "-2deg", delay: 1.0 },
+                                { id: "6bFZ8Erc4zA", top: "47%", left: "21%", w: "19%", rot: "1deg", delay: 1.1 },
+                                { id: "ynUTFCYmNV4", top: "46%", left: "41%", w: "19%", rot: "-1deg", delay: 1.2 },
+                                { id: "0ZRm8VCwIis", top: "47%", left: "61%", w: "19%", rot: "2deg", delay: 1.3, accent: true },
+                                { id: "2ME4wUhVI58", top: "46%", right: "1%", w: "18%", rot: "-2deg", delay: 1.4 },
+                                { id: "sbxm8G5J_Vg", top: "69%", left: "10%", w: "19%", rot: "1deg", delay: 1.5 },
+                                { id: "bHEWhKFk-Zc", top: "70%", left: "40.5%", w: "19%", rot: "-1deg", delay: 1.6 },
+                                { id: "JoAX5wCLH4s", top: "69%", right: "10%", w: "19%", rot: "2deg", delay: 1.7 },
+                                { id: "dI2tqt7BbJ0", top: "70%", left: "30%", w: "19%", rot: "-2deg", delay: 1.8 },
+                                { id: "JwlKMeja8Nw", top: "69%", left: "50%", w: "19%", rot: "1deg", delay: 1.9, accent: true },
+                                { id: "V_Qszk8N9bw", top: "70%", right: "30%", w: "19%", rot: "-1deg", delay: 2.0 }
+                            ].map((v) => (
+                                <motion.div
+                                    key={`dt-${v.id}`}
+                                    initial={{ opacity: 0 }}
+                                    whileInView={{ opacity: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.3, delay: v.delay }}
+                                    className="absolute rounded-xl overflow-hidden border-4 shadow-xl cursor-pointer hover:scale-105 hover:z-50 transition-all duration-300 will-change-transform"
+                                    style={{
+                                        top: v.top,
+                                        left: v.left,
+                                        right: v.right,
+                                        width: v.w,
+                                        aspectRatio: "16/9",
+                                        transform: `rotate(${v.rot})`,
+                                        borderColor: v.accent ? "rgba(239, 68, 68, 0.3)" : "rgba(255, 255, 255, 0.2)"
+                                    }}
+                                >
+                                    <iframe
+                                        src={`https://www.youtube.com/embed/${v.id}`}
+                                        title="Player Reaction Video"
+                                        className="w-full h-full"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowFullScreen
+                                    />
+                                    {v.label && (
+                                        <div className="absolute bottom-3 left-3 px-3 py-1 bg-black/80 rounded pointer-events-none">
+                                            <p className="text-warrior-red text-[8px] font-bold uppercase tracking-wider">{v.label}</p>
+                                        </div>
+                                    )}
+                                    {v.id === "622WDORv834" && (
+                                        <div className="absolute top-2 left-2 px-2 py-1 bg-warrior-red/90 text-white text-[8px] font-mono uppercase tracking-wider pointer-events-none">
+                                            REC •
+                                        </div>
+                                    )}
+                                </motion.div>
+                            ))}
 
-                            {/* Video 3 */}
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                whileInView={{ opacity: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.3, delay: 0.2 }}
-                                className="absolute top-[1%] left-[41%] w-[19%] aspect-video rounded-xl overflow-hidden border-4 border-warrior-red/30 shadow-xl cursor-pointer hover:scale-105 hover:z-50 transition-all duration-300 will-change-transform"
-                                style={{ transform: 'rotate(-2deg)' }}
-                            >
-                                <iframe
-                                    src="https://www.youtube.com/embed/nbDT71Y1cwc"
-                                    title="Player Reaction Video"
-                                    className="w-full h-full"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen
-                                />
-                                <div className="absolute top-2 right-2 w-2 h-2 rounded-full bg-red-600 animate-pulse pointer-events-none" />
-                            </motion.div>
-
-                            {/* Video 4 */}
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                whileInView={{ opacity: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.3, delay: 0.3 }}
-                                className="absolute top-[2%] left-[61%] w-[19%] aspect-video rounded-xl overflow-hidden border-4 border-white/20 shadow-xl cursor-pointer hover:scale-105 hover:z-50 transition-all duration-300 will-change-transform"
-                                style={{ transform: 'rotate(2deg)' }}
-                            >
-                                <iframe
-                                    src="https://www.youtube.com/embed/cs67mtPnNVM"
-                                    title="Player Reaction Video"
-                                    className="w-full h-full"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen
-                                />
-                            </motion.div>
-
-                            {/* Video 5 */}
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                whileInView={{ opacity: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.3, delay: 0.4 }}
-                                className="absolute top-[1%] right-[1%] w-[18%] aspect-video rounded-xl overflow-hidden border-4 border-white/20 shadow-xl cursor-pointer hover:scale-105 hover:z-50 transition-all duration-300 will-change-transform"
-                                style={{ transform: 'rotate(-1deg)' }}
-                            >
-                                <iframe
-                                    src="https://www.youtube.com/embed/4RNf6Q_iApA"
-                                    title="Player Reaction Video"
-                                    className="w-full h-full"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen
-                                />
-                            </motion.div>
-
-                            {/* Row 2 - Upper middle (6 videos) */}
-                            {/* Video 6 */}
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                whileInView={{ opacity: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.3, delay: 0.5 }}
-                                className="absolute top-[23%] left-[1%] w-[19%] aspect-video rounded-xl overflow-hidden border-4 border-white/20 shadow-xl cursor-pointer hover:scale-105 hover:z-50 transition-all duration-300 will-change-transform"
-                                style={{ transform: 'rotate(1deg)' }}
-                            >
-                                <iframe
-                                    src="https://www.youtube.com/embed/FrcyjEvl7Ng"
-                                    title="Player Reaction Video"
-                                    className="w-full h-full"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen
-                                />
-                            </motion.div>
-
-                            {/* Video 7 */}
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                whileInView={{ opacity: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.3, delay: 0.6 }}
-                                className="absolute top-[24%] left-[21%] w-[19%] aspect-video rounded-xl overflow-hidden border-4 border-white/20 shadow-xl cursor-pointer hover:scale-105 hover:z-50 transition-all duration-300 will-change-transform"
-                                style={{ transform: 'rotate(-2deg)' }}
-                            >
-                                <iframe
-                                    src="https://www.youtube.com/embed/1EjOVraZT9M"
-                                    title="Player Reaction Video"
-                                    className="w-full h-full"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen
-                                />
-                            </motion.div>
-
-                            {/* Video 8 */}
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                whileInView={{ opacity: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.3, delay: 0.7 }}
-                                className="absolute top-[23%] left-[41%] w-[19%] aspect-video rounded-xl overflow-hidden border-4 border-white/20 shadow-xl cursor-pointer hover:scale-105 hover:z-50 transition-all duration-300 will-change-transform"
-                                style={{ transform: 'rotate(2deg)' }}
-                            >
-                                <iframe
-                                    src="https://www.youtube.com/embed/jSvm4kwpobs"
-                                    title="Player Reaction Video"
-                                    className="w-full h-full"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen
-                                />
-                            </motion.div>
-
-                            {/* Video 9 */}
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                whileInView={{ opacity: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.3, delay: 0.8 }}
-                                className="absolute top-[24%] left-[61%] w-[19%] aspect-video rounded-xl overflow-hidden border-4 border-warrior-red/30 shadow-xl cursor-pointer hover:scale-105 hover:z-50 transition-all duration-300 will-change-transform"
-                                style={{ transform: 'rotate(-1deg)' }}
-                            >
-                                <iframe
-                                    src="https://www.youtube.com/embed/XfslJZyXppc"
-                                    title="Player Reaction Video"
-                                    className="w-full h-full"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen
-                                />
-                                <div className="absolute bottom-3 left-3 px-3 py-1 bg-black/80 rounded pointer-events-none">
-                                    <p className="text-warrior-red text-xs font-bold uppercase tracking-wider">SUBJECT #0421</p>
-                                </div>
-                            </motion.div>
-
-                            {/* Video 10 */}
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                whileInView={{ opacity: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.3, delay: 0.9 }}
-                                className="absolute top-[23%] right-[1%] w-[18%] aspect-video rounded-xl overflow-hidden border-4 border-white/20 shadow-xl cursor-pointer hover:scale-105 hover:z-50 transition-all duration-300 will-change-transform"
-                                style={{ transform: 'rotate(1deg)' }}
-                            >
-                                <iframe
-                                    src="https://www.youtube.com/embed/Xw1vfLX45O8"
-                                    title="Player Reaction Video"
-                                    className="w-full h-full"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen
-                                />
-                            </motion.div>
-
-                            {/* Row 3 - Lower middle (6 videos) */}
-                            {/* Video 11 */}
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                whileInView={{ opacity: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.3, delay: 1.0 }}
-                                className="absolute top-[46%] left-[1%] w-[19%] aspect-video rounded-xl overflow-hidden border-4 border-white/20 shadow-xl cursor-pointer hover:scale-105 hover:z-50 transition-all duration-300 will-change-transform"
-                                style={{ transform: 'rotate(-2deg)' }}
-                            >
-                                <iframe
-                                    src="https://www.youtube.com/embed/b_l52wUEk_A"
-                                    title="Player Reaction Video"
-                                    className="w-full h-full"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen
-                                />
-                            </motion.div>
-
-                            {/* Video 12 */}
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                whileInView={{ opacity: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.3, delay: 1.1 }}
-                                className="absolute top-[47%] left-[21%] w-[19%] aspect-video rounded-xl overflow-hidden border-4 border-white/20 shadow-xl cursor-pointer hover:scale-105 hover:z-50 transition-all duration-300 will-change-transform"
-                                style={{ transform: 'rotate(1deg)' }}
-                            >
-                                <iframe
-                                    src="https://www.youtube.com/embed/6bFZ8Erc4zA"
-                                    title="Player Reaction Video"
-                                    className="w-full h-full"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen
-                                />
-                            </motion.div>
-
-                            {/* Video 13 */}
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                whileInView={{ opacity: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.3, delay: 1.2 }}
-                                className="absolute top-[46%] left-[41%] w-[19%] aspect-video rounded-xl overflow-hidden border-4 border-white/20 shadow-xl cursor-pointer hover:scale-105 hover:z-50 transition-all duration-300 will-change-transform"
-                                style={{ transform: 'rotate(-1deg)' }}
-                            >
-                                <iframe
-                                    src="https://www.youtube.com/embed/ynUTFCYmNV4"
-                                    title="Player Reaction Video"
-                                    className="w-full h-full"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen
-                                />
-                            </motion.div>
-
-                            {/* Video 14 */}
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                whileInView={{ opacity: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.3, delay: 1.3 }}
-                                className="absolute top-[47%] left-[61%] w-[19%] aspect-video rounded-xl overflow-hidden border-4 border-warrior-red/30 shadow-xl cursor-pointer hover:scale-105 hover:z-50 transition-all duration-300 will-change-transform"
-                                style={{ transform: 'rotate(2deg)' }}
-                            >
-                                <iframe
-                                    src="https://www.youtube.com/embed/0ZRm8VCwIis"
-                                    title="Player Reaction Video"
-                                    className="w-full h-full"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen
-                                />
-                            </motion.div>
-
-                            {/* Video 15 */}
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                whileInView={{ opacity: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.3, delay: 1.4 }}
-                                className="absolute top-[46%] right-[1%] w-[18%] aspect-video rounded-xl overflow-hidden border-4 border-white/20 shadow-xl cursor-pointer hover:scale-105 hover:z-50 transition-all duration-300 will-change-transform"
-                                style={{ transform: 'rotate(-2deg)' }}
-                            >
-                                <iframe
-                                    src="https://www.youtube.com/embed/2ME4wUhVI58"
-                                    title="Player Reaction Video"
-                                    className="w-full h-full"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen
-                                />
-                            </motion.div>
-
-                            {/* Row 4 - Bottom (3 videos centered) */}
-                            {/* Video 16 */}
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                whileInView={{ opacity: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.3, delay: 1.5 }}
-                                className="absolute top-[69%] left-[10%] w-[19%] aspect-video rounded-xl overflow-hidden border-4 border-white/20 shadow-xl cursor-pointer hover:scale-105 hover:z-50 transition-all duration-300 will-change-transform"
-                                style={{ transform: 'rotate(1deg)' }}
-                            >
-                                <iframe
-                                    src="https://www.youtube.com/embed/sbxm8G5J_Vg"
-                                    title="Player Reaction Video"
-                                    className="w-full h-full"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen
-                                />
-                            </motion.div>
-
-                            {/* Video 17 */}
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                whileInView={{ opacity: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.3, delay: 1.6 }}
-                                className="absolute top-[70%] left-[40.5%] w-[19%] aspect-video rounded-xl overflow-hidden border-4 border-white/20 shadow-xl cursor-pointer hover:scale-105 hover:z-50 transition-all duration-300 will-change-transform"
-                                style={{ transform: 'rotate(-1deg)' }}
-                            >
-                                <iframe
-                                    src="https://www.youtube.com/embed/bHEWhKFk-Zc"
-                                    title="Player Reaction Video"
-                                    className="w-full h-full"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen
-                                />
-                            </motion.div>
-
-                            {/* Video 18 */}
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                whileInView={{ opacity: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.3, delay: 1.7 }}
-                                className="absolute top-[69%] right-[10%] w-[19%] aspect-video rounded-xl overflow-hidden border-4 border-white/20 shadow-xl cursor-pointer hover:scale-105 hover:z-50 transition-all duration-300 will-change-transform"
-                                style={{ transform: 'rotate(2deg)' }}
-                            >
-                                <iframe
-                                    src="https://www.youtube.com/embed/JoAX5wCLH4s"
-                                    title="Player Reaction Video"
-                                    className="w-full h-full"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen
-                                />
-                            </motion.div>
-
-                            {/* Video 19 - Additional bottom row */}
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                whileInView={{ opacity: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.3, delay: 1.8 }}
-                                className="absolute top-[70%] left-[30%] w-[19%] aspect-video rounded-xl overflow-hidden border-4 border-white/20 shadow-xl cursor-pointer hover:scale-105 hover:z-50 transition-all duration-300 will-change-transform"
-                                style={{ transform: 'rotate(-2deg)' }}
-                            >
-                                <iframe
-                                    src="https://www.youtube.com/embed/dI2tqt7BbJ0"
-                                    title="Player Reaction Video"
-                                    className="w-full h-full"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen
-                                />
-                            </motion.div>
-
-                            {/* Video 20 - Additional bottom row */}
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                whileInView={{ opacity: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.3, delay: 1.9 }}
-                                className="absolute top-[69%] left-[50%] w-[19%] aspect-video rounded-xl overflow-hidden border-4 border-warrior-red/30 shadow-xl cursor-pointer hover:scale-105 hover:z-50 transition-all duration-300 will-change-transform"
-                                style={{ transform: 'rotate(1deg)' }}
-                            >
-                                <iframe
-                                    src="https://www.youtube.com/embed/JwlKMeja8Nw"
-                                    title="Player Reaction Video"
-                                    className="w-full h-full"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen
-                                />
-                            </motion.div>
-
-                            {/* Video 21 - Additional bottom row */}
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                whileInView={{ opacity: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.3, delay: 2.0 }}
-                                className="absolute top-[70%] right-[30%] w-[19%] aspect-video rounded-xl overflow-hidden border-4 border-white/20 shadow-xl cursor-pointer hover:scale-105 hover:z-50 transition-all duration-300 will-change-transform"
-                                style={{ transform: 'rotate(-1deg)' }}
-                            >
-                                <iframe
-                                    src="https://www.youtube.com/embed/V_Qszk8N9bw"
-                                    title="Player Reaction Video"
-                                    className="w-full h-full"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen
-                                />
-                            </motion.div>
-
-                            {/* Decorative red accent bars */}
+                            {/* Decorative Desktop Accents */}
                             <div className="absolute top-[35%] left-0 w-[12%] h-[2px] bg-warrior-red/60 pointer-events-none" />
                             <div className="absolute top-[58%] right-0 w-[12%] h-[2px] bg-warrior-red/60 pointer-events-none" />
                         </div>
@@ -777,6 +479,7 @@ const Trojan = () => {
                         </motion.div>
                     </div>
                 </motion.div>
+
             </div >
             <Footer />
         </div >

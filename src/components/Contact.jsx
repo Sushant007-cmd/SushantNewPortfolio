@@ -107,14 +107,7 @@ const Contact = () => {
                     ))}
                 </div>
 
-                <div className="flex flex-col md:flex-row justify-between items-center gap-6 pt-12 border-t border-white/5 text-[10px] font-mono text-gray-600 uppercase tracking-widest">
-                    <div className="flex items-center gap-2">
-                        <span className="w-2 h-2 rounded-full bg-warrior-red animate-pulse" />
-                        Status: Active & Online
-                    </div>
-                    <div>© 2026 SUSHANT // MISSION CONTROL</div>
-                    <div>COORDINATES: 28.6139° N, 77.2090° E</div>
-                </div>
+
             </div>
         </section>
     );
