@@ -9,7 +9,7 @@ const Navbar = ({ textColor }) => {
         { name: 'About me', href: '#about', type: 'scroll' },
         { name: 'Trojan', href: '/trojan', type: 'link' },
         { name: 'Contact', href: '#contact', type: 'scroll' },
-        { name: 'Resume', href: 'https://drive.google.com/file/d/1pxnGTQ9uvHdsABhMhoM-_HH-M0T_u_-f/view?usp=sharing', type: 'external' },
+        { name: 'Resume', href: 'https://drive.google.com/file/d/16nP2g4-LHQgAxEnYaRnLu5X4Vf4OK7zr/view?usp=sharing', type: 'external' },
     ];
 
     return (
